@@ -4,19 +4,23 @@ import org.junit.Before;
 import org.junit.Test;
 import people.Visitor;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class RollercoasterTest {
 
     RollerCoaster rollerCoaster;
     Visitor visitor1;
     Visitor visitor2;
+    Visitor visitor3;
+    Visitor visitor4;
 
     @Before
     public void setUp() {
         rollerCoaster = new RollerCoaster("Blue Ridge", 10);
         visitor1 = new Visitor(19, 188, 22.0);
         visitor2 = new Visitor(25, 202, 25.0);
+        visitor2 = new Visitor(13, 140, 15.0);
+        visitor2 = new Visitor(11, 152, 12.0);
     }
 
     @Test
@@ -47,5 +51,20 @@ public class RollercoasterTest {
     @Test
     public void chargesDoublePriceForVisitorOver200cm(){
         assertEquals(16.8, rollerCoaster.priceFor(visitor2), 0.01);
+    }
+
+    @Test
+    public void visitorAllowedIfOver145cmTallandOver12(){
+        assertTrue(rollerCoaster.isAllowed(visitor1));
+    }
+
+    @Test
+    public void visitorNotAllowedIfUnder145cmTallandOver12(){
+        assertFalse(rollerCoaster.isAllowed(visitor3));
+    }
+
+    @Test
+    public void visitorNotAllowedIfOver145cmTallandUnder12(){
+        assertFalse(rollerCoaster.isAllowed(visitor4));
     }
 }
