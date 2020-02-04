@@ -17,6 +17,10 @@ public class Dodgems extends Attraction implements ITicketed {
     }
 
     public double priceFor(Visitor visitor){
-        return 0.0;
+        if (visitor.getAge() < 12) {
+            return defaultPrice() / 2;
+        } else {
+            return defaultPrice();
+        }
     }
 }
