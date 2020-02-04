@@ -36,11 +36,11 @@ public class TobaccoStallTest {
 
     @Test
     public void visitorAllowedIf18OrOver(){
-        assertTrue(tobaccoStall.isAllowed(visitor1));
+        assertTrue(tobaccoStall.isAllowedTo(visitor1));
     }
 
     @Test
     public void visitorNotAllowedIfUnder18(){
-        assertFalse(tobaccoStall.isAllowed(visitor2));
+        assertFalse(tobaccoStall.isAllowedTo(visitor2));
     }
 }

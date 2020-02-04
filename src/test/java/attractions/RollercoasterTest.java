@@ -19,8 +19,8 @@ public class RollercoasterTest {
         rollerCoaster = new RollerCoaster("Blue Ridge", 10);
         visitor1 = new Visitor(19, 188, 22.0);
         visitor2 = new Visitor(25, 202, 25.0);
-        visitor2 = new Visitor(13, 140, 15.0);
-        visitor2 = new Visitor(11, 152, 12.0);
+        visitor3 = new Visitor(13, 140, 15.0);
+        visitor4 = new Visitor(11, 152, 12.0);
     }
 
     @Test
@@ -55,16 +55,16 @@ public class RollercoasterTest {
 
     @Test
     public void visitorAllowedIfOver145cmTallandOver12(){
-        assertTrue(rollerCoaster.isAllowed(visitor1));
+        assertTrue(rollerCoaster.isAllowedTo(visitor1));
     }
 
     @Test
     public void visitorNotAllowedIfUnder145cmTallandOver12(){
-        assertFalse(rollerCoaster.isAllowed(visitor3));
+        assertFalse(rollerCoaster.isAllowedTo(visitor3));
     }
 
     @Test
     public void visitorNotAllowedIfOver145cmTallandUnder12(){
-        assertFalse(rollerCoaster.isAllowed(visitor4));
+        assertFalse(rollerCoaster.isAllowedTo(visitor4));
     }
 }

@@ -35,11 +35,11 @@ public class PlaygroundTest {
 
     @Test
     public void visitorAllowedIfUnder15(){
-        assertTrue(playground.isAllowed(visitor1));
+        assertTrue(playground.isAllowedTo(visitor1));
     }
 
     @Test
     public void visitorNotAllowedIfOver15(){
-        assertFalse(playground.isAllowed(visitor2));
+        assertFalse(playground.isAllowedTo(visitor2));
     }
 }
