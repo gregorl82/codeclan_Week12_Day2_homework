@@ -6,7 +6,6 @@ import stalls.*;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 public class ThemeParkTest {
 
